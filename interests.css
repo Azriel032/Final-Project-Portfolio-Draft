@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #050508;
+    --text-main: #ffffff;
+    --text-muted: #94a3b8;
+    --accent: #a78bfa;
+    --nav-bg: rgba(255, 255, 255, 0.05);
+    --font-heading: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+    font-family: var(--font-heading);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(70, 40, 120, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(40, 20, 80, 0.1) 0%, transparent 40%),
+        url('https://www.transparenttextures.com/patterns/stardust.png');
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 0.85rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+    background: var(--nav-bg);
+    padding: 5px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.nav-links a.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+}
+
+.nav-links a:hover {
+    color: var(--text-main);
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+    flex-grow: 1;
+}
+
+.dual-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    width: 100%;
+}
+
+.column-box {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+h2 {
+    color: var(--text-main);
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+h2 i {
+    color: var(--accent);
+}
+
+.hobbies-list, .website-list {
+    list-style: none;
+}
+
+.hobbies-list li, .website-list li {
+    padding: 1rem 0;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hobbies-list li:last-child, .website-list li:last-child {
+    border-bottom: none;
+}
+
+.hobbies-list li:hover, .website-list li:hover {
+    transform: translateX(8px);
+    color: var(--text-main);
+}
+
+.hobbies-list li i {
+    color: var(--accent);
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.count-badge {
+    background: var(--accent);
+    color: #050508;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .dual-columns {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .column-box {
+        padding: 2rem 1.5rem;
+    }
+}
